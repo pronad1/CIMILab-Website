@@ -1,0 +1,70 @@
+[
+  {
+    "id": "dey2024dsanet",
+    "title": "DSANet-ISLES: Dual-Stream Attention Network for Interpretable Stroke Lesion Segmentation",
+    "authors": ["T. Dey", "A. Rahman"],
+    "venue": "MICCAI Workshop on Lesion Segmentation in MRI",
+    "year": 2024,
+    "type": "conference",
+    "links": {
+      "pdf": "",
+      "doi": "",
+      "code": "https://github.com/CIMILab/StrokeDSANet_ISLES22",
+      "bibtex": "@inproceedings{dey2024dsanet,\n  title={DSANet-ISLES: Dual-Stream Attention Network for Interpretable Stroke Lesion Segmentation},\n  author={Dey, T. and Rahman, A.},\n  booktitle={MICCAI Workshop on Lesion Segmentation in MRI},\n  year={2024}\n}"
+    },
+    "tags": ["medical-imaging", "segmentation", "interpretable-ai", "stroke"],
+    "relatedProject": "dsanet-isles",
+    "featured": true
+  },
+  {
+    "id": "dey2024dernet",
+    "title": "DERNet: Deep Ensemble Residual Network for Spinal Lesion Detection on VinDr-SpineXR",
+    "authors": ["T. Dey"],
+    "venue": "IEEE International Conference on Biomedical Imaging (ISBI)",
+    "year": 2024,
+    "type": "conference",
+    "links": {
+      "pdf": "",
+      "doi": "",
+      "code": "https://github.com/CIMILab/Spinal_Lesion-VinDr-SpineXR",
+      "bibtex": "@inproceedings{dey2024dernet,\n  title={DERNet: Deep Ensemble Residual Network for Spinal Lesion Detection on VinDr-SpineXR},\n  author={Dey, T.},\n  booktitle={IEEE International Conference on Biomedical Imaging (ISBI)},\n  year={2024}\n}"
+    },
+    "tags": ["medical-imaging", "detection", "ensemble-learning", "spine"],
+    "relatedProject": "dernet-spinal",
+    "featured": true
+  },
+  {
+    "id": "dey2025uncertainty",
+    "title": "Calibrated Uncertainty Quantification for Medical Image Segmentation Ensembles",
+    "authors": ["T. Dey", "A. Rahman"],
+    "venue": "Medical Image Analysis (Under Review)",
+    "year": 2025,
+    "type": "journal",
+    "links": {
+      "pdf": "",
+      "doi": "",
+      "code": "",
+      "bibtex": "@article{dey2025uncertainty,\n  title={Calibrated Uncertainty Quantification for Medical Image Segmentation Ensembles},\n  author={Dey, T. and Rahman, A.},\n  journal={Medical Image Analysis},\n  year={2025},\n  note={Under Review}\n}"
+    },
+    "tags": ["uncertainty-quantification", "segmentation", "trustworthy-ai"],
+    "relatedProject": "dsanet-isles",
+    "featured": false
+  },
+  {
+    "id": "mendez2025biomedllm",
+    "title": "Retrieval-Augmented Generation for Clinical Decision Support: Reducing Hallucinations in Biomedical LLMs",
+    "authors": ["C. Mendez", "T. Dey"],
+    "venue": "ACL BioNLP Workshop",
+    "year": 2025,
+    "type": "workshop",
+    "links": {
+      "pdf": "",
+      "doi": "",
+      "code": "https://github.com/CIMILab/BioMed-LLM",
+      "bibtex": "@inproceedings{mendez2025biomedllm,\n  title={Retrieval-Augmented Generation for Clinical Decision Support: Reducing Hallucinations in Biomedical LLMs},\n  author={Mendez, C. and Dey, T.},\n  booktitle={ACL BioNLP Workshop},\n  year={2025}\n}"
+    },
+    "tags": ["llm", "clinical-nlp", "rag", "hallucination"],
+    "relatedProject": "biomed-llm",
+    "featured": true
+  }
+]

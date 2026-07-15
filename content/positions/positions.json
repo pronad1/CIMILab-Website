@@ -1,0 +1,38 @@
+[
+  {
+    "role": "PhD Position — Interpretable Medical AI",
+    "level": "phd",
+    "status": "open",
+    "deadline": "",
+    "description": "We are seeking a highly motivated PhD student to work on interpretable deep learning for medical image analysis. The project will extend our DSANet and DERNet work, exploring new architectures for multi-modal, uncertainty-aware clinical AI. Strong background in deep learning and Python required; experience with medical imaging is a plus.",
+    "requirements": ["MSc in Computer Science, Electrical Engineering, or related field", "Strong Python and PyTorch/TensorFlow skills", "Experience with deep learning", "Interest in medical applications"],
+    "applyLink": "mailto:deycimilab@gmail.com"
+  },
+  {
+    "role": "MSc Thesis Student — Biomedical Language Models",
+    "level": "msc",
+    "status": "open",
+    "deadline": "",
+    "description": "Master's thesis position available to work on the BioMed-LLM project. The student will design and evaluate RAG pipelines and fine-tuning strategies for open-source LLMs applied to clinical NLP tasks. Good programming skills and familiarity with transformer models required.",
+    "requirements": ["BSc in Computer Science or related field", "Python programming proficiency", "Familiarity with Hugging Face or similar"],
+    "applyLink": "mailto:deycimilab@gmail.com"
+  },
+  {
+    "role": "Undergraduate Research Assistant — Benchmarking & Evaluation",
+    "level": "undergrad",
+    "status": "open",
+    "deadline": "",
+    "description": "Part-time RA position contributing to CIMILab-Bench and CIMILab-DataOps. Ideal for a motivated undergrad who wants hands-on research experience in AI for healthcare. Python skills and curiosity are the primary requirements.",
+    "requirements": ["Currently enrolled undergraduate", "Basic Python skills", "Motivated self-starter"],
+    "applyLink": "mailto:deycimilab@gmail.com"
+  },
+  {
+    "role": "Visiting Researcher",
+    "level": "visiting",
+    "status": "open",
+    "deadline": "",
+    "description": "CIMILab welcomes visiting researchers from partner institutions for collaborative projects. We have active interest in collaborations on medical imaging, multimodal AI, and trustworthy AI systems. Duration is typically 3–6 months. Contact us with your background and interests.",
+    "requirements": ["Graduate student or postdoc at an accredited institution", "Complementary research interests"],
+    "applyLink": "mailto:deycimilab@gmail.com"
+  }
+]
