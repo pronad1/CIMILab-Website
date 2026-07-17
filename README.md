@@ -1,5 +1,7 @@
 # CIMILab Website
 
+> **✨ Live Website:** [https://pronad1.github.io/CIMILab-Website/](https://pronad1.github.io/CIMILab-Website/)
+
 A fully static HTML/CSS/JavaScript website for the **Computation Informatics and Machine Intelligence Lab (CIMILab)** at the University of Missouri, MU Institute for Data Science and Informatics (MUIDSI).
 
 ## Tech Stack
@@ -15,7 +17,7 @@ A fully static HTML/CSS/JavaScript website for the **Computation Informatics and
 ## Structure
 
 ```
-site/
+.
 ├── index.html            ← Home page
 ├── about.html            ← About CIMILab
 ├── research.html         ← Research pillars
@@ -34,6 +36,7 @@ site/
 │   └── ...
 ├── news/
 │   └── *.html
+├── images/               ← All site images
 └── assets/
     ├── style.css         ← Full design system CSS
     └── js/
@@ -46,17 +49,17 @@ site/
 
 ## Running Locally
 
-Open any `.html` file directly in your browser, **or** start a local server:
+Open any `.html` file directly in your browser, **or** start a local server in this directory:
 
 ```bash
 # Option 1 — Python (built-in)
-python -m http.server 3000 --directory site
+python -m http.server 3000
 
 # Option 2 — Node.js (npx serve)
-npx serve site
+npx serve .
 
 # Option 3 — VS Code Live Server extension
-# Right-click site/index.html → Open with Live Server
+# Right-click index.html → Open with Live Server
 ```
 
 Then open `http://localhost:3000` in your browser.
@@ -65,10 +68,9 @@ Then open `http://localhost:3000` in your browser.
 
 This is a pure static site — deploy anywhere:
 
-- **GitHub Pages**: push `site/` folder, configure source
-- **Netlify**: drag-and-drop the `site/` folder
-- **Vercel**: configure `site/` as the output directory
-- Any static CDN or web server
+- **GitHub Pages**: configure the repository root (`/`) as the publishing source.
+- **Netlify / Vercel**: simply connect the repository without any build command.
+- Any static CDN or web server.
 
 ## Updating Content
 
@@ -76,16 +78,12 @@ Content is embedded directly in the HTML files. To update:
 
 | What | Where |
 |---|---|
-| Team members | `site/people.html` |
-| Projects | `site/projects.html` + `site/projects/*.html` |
-| Publications | `site/publications.html` |
-| News | `site/news.html` + `site/news/*.html` |
-| Lab info / contact | `site/contact.html`, `site/index.html` footer |
-| Design tokens | `site/assets/style.css` — `:root {}` section |
-
-## Original Next.js Source
-
-The original Next.js 16 / React 19 source code is in `src/`. It is no longer the active site but is preserved for reference.
+| Team members | `people.html` |
+| Projects | `projects.html` + `projects/*.html` |
+| Publications | `publications.html` |
+| News | `news.html` + `news/*.html` |
+| Lab info / contact | `contact.html`, `index.html` footer |
+| Design tokens | `assets/style.css` — `:root {}` section |
 
 ## Contact
 
