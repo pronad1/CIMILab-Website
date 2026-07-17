@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CIMILab launches BioMed-LLM project | CIMILab News</title>
+  <meta name="description" content="CIMILab announces the BioMed-LLM project, exploring domain adaptation of large language models for biomedical applications." />
+  <link rel="icon" href="../images/cimilab_icon.png" type="image/png" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { corePlugins: { preflight: false } }</script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header id="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-icon"><img src="../images/cimilab_icon.png" alt="CIMILab" /></div>
+        <div><div class="brand-name">CIMI<span>Lab</span></div><div class="brand-sub">Univ. of Missouri · MUIDSI</div></div>
+      </a>
+      <div class="desktop-nav">
+        <a href="../about.html"        class="nav-link">About</a>
+        <a href="../research.html"     class="nav-link">Research</a>
+        <a href="../projects.html"     class="nav-link">Projects</a>
+        <a href="../publications.html" class="nav-link">Publications</a>
+        <a href="../people.html"       class="nav-link">People</a>
+        <a href="../news.html"         class="nav-link active">News</a>
+        <a href="../resources.html"    class="nav-link">Resources</a>
+        <a href="../join-us.html"      class="btn btn-primary btn-sm" style="margin-left:0.75rem;">Join Us</a>
+      </div>
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+        <svg class="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </nav>
+  </div>
+  <nav id="mobile-menu">
+    <a href="../index.html"    class="mobile-nav-link">Home</a>
+    <a href="../about.html"    class="mobile-nav-link">About</a>
+    <a href="../research.html" class="mobile-nav-link">Research</a>
+    <a href="../projects.html" class="mobile-nav-link">Projects</a>
+    <a href="../people.html"   class="mobile-nav-link">People</a>
+    <a href="../news.html"     class="mobile-nav-link active">News <span class="mobile-nav-dot"></span></a>
+    <a href="../join-us.html"  class="mobile-nav-link">Join Us</a>
+    <a href="../contact.html"  class="mobile-nav-link">Contact</a>
+  </nav>
+</header>
+
+<div class="page-top">
+
+  <!-- HEADER -->
+  <section class="section" style="padding-bottom:2rem;">
+    <div class="container" style="max-width:760px;">
+      <a href="../news.html" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:var(--text-muted);text-decoration:none;margin-bottom:1.5rem;">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to News
+      </a>
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;flex-wrap:wrap;">
+        <span style="font-size:0.72rem;font-weight:700;padding:0.2rem 0.65rem;border-radius:6px;text-transform:uppercase;background:rgba(16,185,129,0.15);color:#34D399;">Research</span>
+        <span style="color:var(--text-muted);font-size:0.85rem;">July 1, 2026</span>
+      </div>
+      <h1 style="font-size:clamp(1.75rem,4vw,2.75rem);font-weight:800;letter-spacing:-0.035em;line-height:1.25;margin-bottom:2rem;">
+        CIMILab launches BioMed-LLM project
+      </h1>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="section" style="padding-top:0;">
+    <div class="container" style="max-width:760px;">
+      <div class="card" style="padding:2.5rem;">
+        <div class="prose" style="max-width:none;font-size:1.05rem;line-height:1.8;">
+          <p>CIMILab is excited to announce the launch of <strong>BioMed-LLM</strong>, our new research project on domain-adapted large language models for biomedical applications. Led by Carlos Mendez (MSc student) under the supervision of Dr. Dey, the project will explore fine-tuning and retrieval-augmented generation (RAG) strategies for open-source LLMs on clinical NLP tasks.</p>
+          <p>Initial benchmarks on PubMedQA and MedQA show promising results, with our fine-tuned models outperforming zero-shot GPT-3.5 baselines. We'll be releasing code and model checkpoints progressively — follow the <a href="https://github.com/CIMILab/BioMed-LLM" target="_blank" rel="noopener noreferrer">GitHub repository</a> for updates.</p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border);">
+          <span class="tag">foundation-models</span>
+          <span class="tag">clinical-nlp</span>
+          <span class="tag">new-project</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer style="background:var(--bg-void);border-top:1px solid var(--border);">
+  <div class="container" style="padding:2.5rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+    <p style="color:var(--text-faint);font-size:0.78rem;">© 2026 CIMILab · University of Missouri</p>
+    <div style="display:flex;gap:1.25rem;">
+      <a href="../index.html" class="footer-text-link">Home</a>
+      <a href="../news.html"  class="footer-text-link">News</a>
+      <a href="../contact.html" class="footer-text-link">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/nav.js"></script>
+</body>
+</html>

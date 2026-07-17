@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources &amp; Reproducibility | CIMILab</title>
+  <meta name="description" content="CIMILab's Reproducibility Standard, open-source code, and dataset releases." />
+  <link rel="icon" href="./images/cimilab_icon.png" type="image/png" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { corePlugins: { preflight: false } }</script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header id="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"><img src="./images/cimilab_icon.png" alt="CIMILab" /></div>
+        <div><div class="brand-name">CIMI<span>Lab</span></div><div class="brand-sub">Univ. of Missouri · MUIDSI</div></div>
+      </a>
+      <div class="desktop-nav">
+        <a href="about.html"        class="nav-link">About</a>
+        <a href="research.html"     class="nav-link">Research</a>
+        <a href="projects.html"     class="nav-link">Projects</a>
+        <a href="publications.html" class="nav-link">Publications</a>
+        <a href="people.html"       class="nav-link">People</a>
+        <a href="news.html"         class="nav-link">News</a>
+        <a href="resources.html"    class="nav-link active">Resources</a>
+        <a href="join-us.html"      class="btn btn-primary btn-sm" style="margin-left:0.75rem;">Join Us</a>
+      </div>
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+        <svg class="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </nav>
+  </div>
+  <nav id="mobile-menu">
+    <a href="index.html"        class="mobile-nav-link">Home</a>
+    <a href="about.html"        class="mobile-nav-link">About</a>
+    <a href="research.html"     class="mobile-nav-link">Research</a>
+    <a href="projects.html"     class="mobile-nav-link">Projects</a>
+    <a href="publications.html" class="mobile-nav-link">Publications</a>
+    <a href="people.html"       class="mobile-nav-link">People</a>
+    <a href="news.html"         class="mobile-nav-link">News</a>
+    <a href="resources.html"    class="mobile-nav-link active">Resources <span class="mobile-nav-dot"></span></a>
+    <a href="join-us.html"      class="mobile-nav-link">Join Us</a>
+    <a href="contact.html"      class="mobile-nav-link">Contact</a>
+  </nav>
+</header>
+
+<div class="page-top">
+
+  <!-- HEADER -->
+  <section class="section" style="padding-bottom:2rem;">
+    <div class="container" style="max-width:900px;">
+      <p style="color:var(--accent);font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;">Open Science</p>
+      <h1 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-0.04em;margin-bottom:1.5rem;">Resources &amp; <span class="gradient-text">Reproducibility</span></h1>
+      <p style="color:var(--text-secondary);font-size:1.1rem;line-height:1.75;max-width:65ch;">
+        We believe that for AI to be trustworthy, it must first be reproducible. We hold our internal work to a strict standard and release as much of our code, models, and data as institutional ethics boards allow.
+      </p>
+    </div>
+  </section>
+
+  <!-- REPRODUCIBILITY STANDARD -->
+  <section class="section" style="padding-top:0;">
+    <div class="container" style="max-width:900px;">
+      <div class="card-accent" style="padding:3rem;background:linear-gradient(135deg,rgba(245,158,11,0.05) 0%,transparent 100%);border-color:rgba(245,158,11,0.2);">
+        <h2 style="font-size:1.75rem;font-weight:800;margin-bottom:1.5rem;color:var(--accent);">The CIMILab Reproducibility Standard</h2>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-bottom:2.5rem;font-size:0.975rem;">
+          Every project graduating from CIMILab to a public release or publication must satisfy the following pipeline requirements. This ensures our baselines are strong and our results can be verified by independent researchers.
+        </p>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:1.5rem;">
+          <li style="display:flex;gap:1rem;">
+            <div style="flex-shrink:0;margin-top:0.25rem;"><svg width="20" height="20" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <strong style="display:block;color:var(--text-primary);font-size:1.05rem;margin-bottom:0.25rem;">Versioned Data</strong>
+              <span style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">All training, validation, and test splits are versioned with checksums (e.g., using DVC). Data preprocessing scripts are deterministic and included in the repo.</span>
+            </div>
+          </li>
+          <li style="display:flex;gap:1rem;">
+            <div style="flex-shrink:0;margin-top:0.25rem;"><svg width="20" height="20" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <strong style="display:block;color:var(--text-primary);font-size:1.05rem;margin-bottom:0.25rem;">Fixed Random Seeds</strong>
+              <span style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">Random seeds for data shuffling, model initialization, and augmentation are explicitly set and documented for identical reruns.</span>
+            </div>
+          </li>
+          <li style="display:flex;gap:1rem;">
+            <div style="flex-shrink:0;margin-top:0.25rem;"><svg width="20" height="20" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <strong style="display:block;color:var(--text-primary);font-size:1.05rem;margin-bottom:0.25rem;">Config-Driven Experiments</strong>
+              <span style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">Hyperparameters are stored in configuration files (YAML/JSON) rather than hardcoded, and the exact config used for the published result is committed to the repository.</span>
+            </div>
+          </li>
+          <li style="display:flex;gap:1rem;">
+            <div style="flex-shrink:0;margin-top:0.25rem;"><svg width="20" height="20" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <strong style="display:block;color:var(--text-primary);font-size:1.05rem;margin-bottom:0.25rem;">Scripted Evaluation</strong>
+              <span style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">A single command (e.g., <code>bash eval.sh</code>) can run the trained model on the test set and reproduce the exact tables/metrics reported in the paper.</span>
+            </div>
+          </li>
+          <li style="display:flex;gap:1rem;">
+            <div style="flex-shrink:0;margin-top:0.25rem;"><svg width="20" height="20" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <strong style="display:block;color:var(--text-primary);font-size:1.05rem;margin-bottom:0.25rem;">Released Weights</strong>
+              <span style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">Unless restricted by data-privacy agreements (common in medical AI), pre-trained model weights are released on HuggingFace or Zenodo.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOFTWARE / REPOS -->
+  <section class="section" style="background:var(--bg-secondary);border-top:1px solid var(--border);">
+    <div class="container" style="max-width:900px;">
+      <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:2rem;">Software &amp; Repositories</h2>
+      <p style="color:var(--text-muted);margin-bottom:2rem;">Our open-source projects are hosted on GitHub. We welcome issues and pull requests.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;">
+        <div class="card" style="padding:1.5rem;">
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;">DSANet-ISLES</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1rem;min-height:3rem;">Deep supervision and attention networks for ischemic stroke lesion segmentation.</p>
+          <a href="https://github.com/CIMILab/StrokeDSANet_ISLES22" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.7.115 2.5.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="card" style="padding:1.5rem;">
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;">DERNet</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1rem;min-height:3rem;">Dual encoder representation network for spinal lesion analysis on VinDr-SpineXR.</p>
+          <a href="https://github.com/CIMILab/Spinal_Lesion-VinDr-SpineXR" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.7.115 2.5.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="card" style="padding:1.5rem;display:flex;flex-direction:column;justify-content:center;align-items:center;border-style:dashed;text-align:center;">
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:1rem;">View all repositories on our GitHub organization page.</p>
+          <a href="https://github.com/CIMILab" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Go to CIMILab on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer style="background:var(--bg-void);border-top:1px solid var(--border);">
+  <div class="container" style="padding:2.5rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+    <p style="color:var(--text-faint);font-size:0.78rem;">© 2026 CIMILab · University of Missouri</p>
+    <div style="display:flex;gap:1.25rem;">
+      <a href="index.html"    class="footer-text-link">Home</a>
+      <a href="projects.html" class="footer-text-link">Projects</a>
+      <a href="contact.html"  class="footer-text-link">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

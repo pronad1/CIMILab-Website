@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research | CIMILab</title>
+  <meta name="description" content="Explore CIMILab's research across four core pillars: Machine Intelligence, Computational Informatics, Trustworthy AI, and Translational AI." />
+  <link rel="icon" href="./images/cimilab_icon.png" type="image/png" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { corePlugins: { preflight: false } }</script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header id="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"><img src="./images/cimilab_icon.png" alt="CIMILab" /></div>
+        <div><div class="brand-name">CIMI<span>Lab</span></div><div class="brand-sub">Univ. of Missouri · MUIDSI</div></div>
+      </a>
+      <div class="desktop-nav">
+        <a href="about.html"        class="nav-link">About</a>
+        <a href="research.html"     class="nav-link active">Research</a>
+        <a href="projects.html"     class="nav-link">Projects</a>
+        <a href="publications.html" class="nav-link">Publications</a>
+        <a href="people.html"       class="nav-link">People</a>
+        <a href="news.html"         class="nav-link">News</a>
+        <a href="resources.html"    class="nav-link">Resources</a>
+        <a href="join-us.html"      class="btn btn-primary btn-sm" style="margin-left:0.75rem;">Join Us</a>
+      </div>
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+        <svg class="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </nav>
+  </div>
+  <nav id="mobile-menu">
+    <a href="index.html"        class="mobile-nav-link">Home</a>
+    <a href="about.html"        class="mobile-nav-link">About</a>
+    <a href="research.html"     class="mobile-nav-link active">Research <span class="mobile-nav-dot"></span></a>
+    <a href="projects.html"     class="mobile-nav-link">Projects</a>
+    <a href="publications.html" class="mobile-nav-link">Publications</a>
+    <a href="people.html"       class="mobile-nav-link">People</a>
+    <a href="news.html"         class="mobile-nav-link">News</a>
+    <a href="resources.html"    class="mobile-nav-link">Resources</a>
+    <a href="join-us.html"      class="mobile-nav-link">Join Us</a>
+    <a href="contact.html"      class="mobile-nav-link">Contact</a>
+  </nav>
+</header>
+
+<div class="page-top">
+
+  <!-- HEADER -->
+  <section class="section" style="padding-bottom:2rem;">
+    <div class="container" style="max-width:900px;text-align:center;">
+      <p style="color:var(--accent);font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;">Research Overview</p>
+      <h1 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-0.04em;margin-bottom:1.5rem;">Our Four <span class="gradient-text">Pillars</span></h1>
+      <p style="color:var(--text-secondary);font-size:1.1rem;line-height:1.75;max-width:60ch;margin:0 auto;">
+        CIMILab structures its research across four distinct pillars that span from theoretical foundation to clinical translation.
+      </p>
+    </div>
+  </section>
+
+  <!-- PILLAR SECTIONS -->
+  <section class="section" style="padding-top:2rem;">
+    <div class="container">
+      <div style="display:flex;flex-direction:column;gap:4rem;">
+
+        <!-- Machine Intelligence -->
+        <div id="machine-intelligence" class="card" style="padding:3rem;display:grid;grid-template-columns:1.5fr 1fr;gap:3rem;align-items:start;background:linear-gradient(135deg,rgba(245,158,11,0.05) 0%,transparent 100%);border-color:rgba(245,158,11,0.15);" class="pillar-section">
+          <div>
+            <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+              <div style="width:3rem;height:3rem;border-radius:12px;background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.25);display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 8v4l3 3"/></svg>
+              </div>
+              <h2 style="font-size:1.75rem;font-weight:800;">Machine Intelligence</h2>
+            </div>
+            <p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.7;margin-bottom:2rem;">Deep learning architectures, ensemble methods, and attention mechanisms for high-stakes prediction and segmentation tasks.</p>
+            <h3 style="font-size:0.85rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem;">Key Themes</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem;">
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:500;background:rgba(245,158,11,0.12);color:#F59E0B;border:1px solid rgba(245,158,11,0.2);">Medical Image Segmentation</span>
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:500;background:rgba(245,158,11,0.12);color:#F59E0B;border:1px solid rgba(245,158,11,0.2);">Ensemble Methods</span>
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:500;background:rgba(245,158,11,0.12);color:#F59E0B;border:1px solid rgba(245,158,11,0.2);">Attention Networks</span>
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:500;background:rgba(245,158,11,0.12);color:#F59E0B;border:1px solid rgba(245,158,11,0.2);">Self-supervised Learning</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <h3 style="font-size:0.85rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem;">Related Projects</h3>
+            <a href="projects/dsanet-isles.html" style="text-decoration:none;">
+              <div class="hover-lift" style="padding:1rem;background:rgba(0,0,0,0.2);border-radius:8px;border:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-weight:600;color:var(--text-primary);font-size:0.95rem;">DSANet-ISLES</span>
+                <svg width="14" height="14" fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Computational Informatics -->
+        <div id="computational-informatics" class="card pillar-section" style="padding:3rem;display:grid;grid-template-columns:1.5fr 1fr;gap:3rem;align-items:start;background:linear-gradient(135deg,rgba(59,130,246,0.05) 0%,transparent 100%);border-color:rgba(59,130,246,0.15);">
+          <div>
+            <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+              <div style="width:3rem;height:3rem;border-radius:12px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.25);display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg>
+              </div>
+              <h2 style="font-size:1.75rem;font-weight:800;">Computational Informatics</h2>
+            </div>
+            <p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.7;margin-bottom:2rem;">Data infrastructure, benchmarking frameworks, and evaluation pipelines that make AI experiments reproducible and comparable.</p>
+            <h3 style="font-size:0.85rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem;">Key Themes</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem;">
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:500;background:rgba(59,130,246,0.12);color:#3B82F6;border:1px solid rgba(59,130,246,0.2);">Benchmarking Frameworks</span>
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:500;background:rgba(59,130,246,0.12);color:#3B82F6;border:1px solid rgba(59,130,246,0.2);">Data Engineering</span>
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:500;background:rgba(59,130,246,0.12);color:#3B82F6;border:1px solid rgba(59,130,246,0.2);">Evaluation Pipelines</span>
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:500;background:rgba(59,130,246,0.12);color:#3B82F6;border:1px solid rgba(59,130,246,0.2);">Reproducibility Standards</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <h3 style="font-size:0.85rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem;">Related Projects</h3>
+            <a href="projects/cimilab-bench.html" style="text-decoration:none;">
+              <div class="hover-lift" style="padding:1rem;background:rgba(0,0,0,0.2);border-radius:8px;border:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-weight:600;color:var(--text-primary);font-size:0.95rem;">CIMILab-Bench</span>
+                <svg width="14" height="14" fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+            </a>
+            <a href="projects/dernet-spinal.html" style="text-decoration:none;">
+              <div class="hover-lift" style="padding:1rem;background:rgba(0,0,0,0.2);border-radius:8px;border:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-weight:600;color:var(--text-primary);font-size:0.95rem;">DERNet — Spinal AI</span>
+                <svg width="14" height="14" fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Trustworthy AI -->
+        <div id="trustworthy-ai" class="card pillar-section" style="padding:3rem;display:grid;grid-template-columns:1.5fr 1fr;gap:3rem;align-items:start;background:linear-gradient(135deg,rgba(139,92,246,0.05) 0%,transparent 100%);border-color:rgba(139,92,246,0.15);">
+          <div>
+            <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+              <div style="width:3rem;height:3rem;border-radius:12px;background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.25);display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h2 style="font-size:1.75rem;font-weight:800;">Trustworthy AI Systems</h2>
+            </div>
+            <p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.7;margin-bottom:2rem;">Uncertainty quantification, interpretability methods, and fairness auditing — building AI that clinicians and patients can trust.</p>
+            <h3 style="font-size:0.85rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem;">Key Themes</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem;">
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:500;background:rgba(139,92,246,0.12);color:#8B5CF6;border:1px solid rgba(139,92,246,0.2);">Uncertainty Quantification</span>
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:500;background:rgba(139,92,246,0.12);color:#8B5CF6;border:1px solid rgba(139,92,246,0.2);">Explainable AI</span>
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:500;background:rgba(139,92,246,0.12);color:#8B5CF6;border:1px solid rgba(139,92,246,0.2);">Fairness &amp; Bias Auditing</span>
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:500;background:rgba(139,92,246,0.12);color:#8B5CF6;border:1px solid rgba(139,92,246,0.2);">Calibration</span>
+            </div>
+          </div>
+          <div></div>
+        </div>
+
+        <!-- Translational AI -->
+        <div id="translational-ai" class="card pillar-section" style="padding:3rem;display:grid;grid-template-columns:1.5fr 1fr;gap:3rem;align-items:start;background:linear-gradient(135deg,rgba(16,185,129,0.05) 0%,transparent 100%);border-color:rgba(16,185,129,0.15);">
+          <div>
+            <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+              <div style="width:3rem;height:3rem;border-radius:12px;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.25);display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4H8.5a3.5 3.5 0 0 0 0 7H15a3.5 3.5 0 0 1 0 7H4"/></svg>
+              </div>
+              <h2 style="font-size:1.75rem;font-weight:800;">Translational AI</h2>
+            </div>
+            <p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.7;margin-bottom:2rem;">Bridging research and deployment — efficient inference, edge adaptation, and clinical decision support at real-world scale.</p>
+            <h3 style="font-size:0.85rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem;">Key Themes</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem;">
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:500;background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.2);">Clinical Decision Support</span>
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:500;background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.2);">Edge AI</span>
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:500;background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.2);">Foundation Models for Medicine</span>
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:500;background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.2);">Multimodal Fusion</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <h3 style="font-size:0.85rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem;">Related Projects</h3>
+            <a href="projects/biomed-llm.html" style="text-decoration:none;">
+              <div class="hover-lift" style="padding:1rem;background:rgba(0,0,0,0.2);border-radius:8px;border:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-weight:600;color:var(--text-primary);font-size:0.95rem;">BioMed-LLM</span>
+                <svg width="14" height="14" fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @media (max-width: 900px) { .pillar-section { grid-template-columns: 1fr !important; } }
+    .hover-lift { transition: transform 0.2s ease, border-color 0.2s ease; }
+    .hover-lift:hover { transform: translateX(4px); border-color: var(--accent) !important; }
+  </style>
+
+</div>
+
+<!-- FOOTER (minimal) -->
+<footer style="background:var(--bg-void);border-top:1px solid var(--border);">
+  <div class="container" style="padding:2.5rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+    <p style="color:var(--text-faint);font-size:0.78rem;">© 2026 CIMILab · University of Missouri</p>
+    <div style="display:flex;gap:1.25rem;">
+      <a href="index.html"    class="footer-text-link">Home</a>
+      <a href="projects.html" class="footer-text-link">Projects</a>
+      <a href="contact.html"  class="footer-text-link">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

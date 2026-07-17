@@ -63,66 +63,89 @@ I looked at patterns across leading CS/AI lab sites (MIT CSAIL, Stanford SAIL/HA
 
 ---
 
-## 3. Recommended Tech Stack
+## 3. Tech Stack — *Current (As Built)*
 
-The lab already lives on GitHub and has no dedicated web developer long-term — so the stack should optimize for **zero hosting cost, content that non-coders can edit through GitHub, and fast/SEO-friendly static output**, while still looking as polished as a funded industry-lab site.
+> **Status: Completed.** The site has been fully migrated from the original Next.js 16 prototype to a zero-dependency static HTML/CSS/JS site. The Next.js source code is preserved in `src/` for reference only.
 
-### 3.1 Stack comparison
+The guiding principle was **maximum simplicity**: no build step, no bundler, no Node.js required to edit or preview the site. Open any `.html` file in a browser and it works.
 
-| Option | Pros | Cons | Verdict |
-|---|---|---|---|
-| **Astro + Tailwind + Content Collections** *(recommended)* | Ships near-zero JS by default (fastest possible loads), first-class typed Markdown/MDX "content collections" that map 1:1 to People/Publications/Projects/News, can drop in React only where interactivity is actually needed (filters, search, theme toggle), best-in-class SEO defaults | Slightly newer ecosystem than Next.js | ✅ Best fit for a content-heavy, mostly-static lab site |
-| Next.js (React) + Tailwind + MDX | Huge ecosystem, easy if the team already knows React, great for later dashboards/interactive demos | Ships more client JS by default, more moving parts than needed for a mostly-static site | Good alternative if you plan lots of interactive demos (live model playgrounds etc.) |
-| Jekyll + `al-folio` | Battle-tested in academia, free on GitHub Pages out of the box, BibTeX publications built in | Ruby toolchain (fiddly on Windows), harder to customize deeply, dated component model | Good zero-build fallback if you want something running *this week* |
-| Hugo | Extremely fast builds | Templating language (Go templates) is less approachable for future contributors | Fine, but no strong advantage over Astro here |
-| WordPress / Webflow / Wix | No-code editing | Recurring cost, heavier pages, harder to keep a clean Git history of content, feels "corporate template" not "research lab" | Not recommended — fights the lab's GitHub-native workflow |
+### 3.1 Active Stack
 
-**Recommendation: Astro**, with an `al-folio`-inspired content model (BibTeX publications, Markdown people/projects/news) but a fully custom, modern visual design built with Tailwind — so the site gets academia's proven information architecture without looking like a template everyone recognizes.
-
-### 3.2 Supporting tools
-
-| Concern | Tool | Notes |
+| Layer | Technology | Notes |
 |---|---|---|
-| Styling | Tailwind CSS | Utility-first, fast to keep consistent |
-| Content | Markdown/MDX + YAML front-matter, validated with Zod schemas (Astro Content Collections) | No database needed; content lives in Git |
-| Publications | `.bib` file parsed at build time | One BibTeX entry = one publication card; standard academic workflow |
-| Full-text search | Pagefind | Static, zero server cost, indexes publications/news/people at build time |
-| Interactive bits | React islands (Astro "islands architecture") | Only the filter bar, search box, and theme toggle ship JS — rest of the page stays static HTML |
-| Citation/metrics sync | **OpenAlex API** (free, no key required) or Semantic Scholar Graph API | Pulls citation counts / venue metadata by DOI to keep publication cards current. *Do not scrape Google Scholar* — it blocks scraping and it's against their terms; OpenAlex is the standard open alternative |
-| GitHub stats sync | GitHub REST API via a small Node script in CI | Auto-lists org repos with stars/language/last-updated on a "Code & Software" page |
-| Non-technical editing (Phase 2, optional) | Decap CMS (Git-based, free) | Gives a form UI on top of the same Markdown files for members who don't want to touch code |
-| Contact / collaboration form | Formspree (or a small serverless function) | Static site can't handle form POST natively; Formspree is free at low volume |
-| Analytics | Plausible or Umami (privacy-friendly, no cookie banner needed) — GA4 as a fallback if the university requires it | Matches an "open, trustworthy" research ethos |
-| Hosting | GitHub Pages (free, matches the org's existing GitHub-native workflow) **or** Vercel (free tier, nicer previews/custom domains) | Recommend Vercel for DX + preview deployments per PR; GitHub Pages works equally well if you want everything under `github.com/CIMILab` |
-| CI | GitHub Actions | Build check, link checker, Lighthouse CI, and the scheduled citation/repo-sync scripts |
+| **Markup** | HTML5 (semantic) | One `.html` file per page — no server-side rendering, no templates |
+| **CSS** | Vanilla CSS design system (`site/assets/style.css`) + **Tailwind CSS v3 (CDN)** | All design tokens, component classes, and utilities are in `style.css`. Tailwind CDN is used as a utility fallback. `preflight` is disabled to avoid conflicts. |
+| **JavaScript** | Vanilla JS modules — no framework | `nav.js`, `hero-canvas.js`, `stats-counter.js`, `filters.js`, `bibtex.js` |
+| **Fonts** | Google Fonts (Inter, IBM Plex Serif, JetBrains Mono) | Loaded via `@import` in `style.css` |
+| **Icons** | Inline SVG | No icon library dependency — all icons are hand-authored SVG paths |
+| **Forms** | Formspree | Contact form posts to `formspree.io/f/YOUR_FORM_ID` — replace with actual endpoint |
+| **Hosting** | Any static host — GitHub Pages, Netlify, or Vercel | Drag-and-drop the `site/` folder |
+| **Analytics** | Not yet configured | Recommended: Plausible or Umami (privacy-friendly) |
+
+### 3.2 How to Run Locally
+
+```bash
+# Option 1 — Python (zero-install)
+python -m http.server 3000 --directory site
+
+# Option 2 — npx serve
+npx serve site
+
+# Option 3 — VS Code Live Server
+# Right-click site/index.html → Open with Live Server
+```
+
+Then open `http://localhost:3000`.
+
+### 3.3 Deprecated / Reference Only
+
+The original Next.js 16 / React 19 / TypeScript source is in `src/`. It is no longer the active codebase. Content Markdown and JSON files in `content/` were the data source for that build; the static site now has content embedded directly in the HTML pages.
+
+| Deprecated Tool | Replacement in static site |
+|---|---|
+| Next.js (SSR/SSG) | Plain HTML files in `site/` |
+| Astro Content Collections | Content embedded in HTML; JSON at `content/publications/publications.json` still referenced as source of truth |
+| MDX / TypeScript | No framework; no transpilation step |
+| Pagefind search | Not yet implemented — can be added via `npx pagefind --source site` |
+| Decap CMS | Direct HTML editing; no CMS layer |
 
 ---
 
-## 4. Information Architecture (Sitemap)
+## 4. Information Architecture — *As Built*
 
 ```
-Home
-├── About                       (mission, pillars, PI bio, affiliations)
-├── Research
-│   ├── Overview                (4 pillars + current themes)
-│   └── /research/[pillar]      (one page per pillar, links out to related projects+papers)
-├── Projects                    (flagship repos as first-class project pages)
-│   └── /projects/[slug]        (DSANet-ISLES, DERNet, BioMed-LLM, CIMILab-Bench, CIMILab-DataOps, CIMILab-Deploy, …)
-├── Publications                (filterable/searchable, BibTeX-driven)
-│   └── /publications/[slug]    (optional deep page per paper: abstract, BibTeX, links)
-├── People
-│   ├── Current Members         (PI, postdocs, PhD/MSc students, RAs)
-│   └── Alumni
-│   └── /people/[slug]          (individual profile)
-├── News                        (papers accepted, awards, talks, new members, media)
-│   └── /news/[slug]
-├── Code & Software              (auto-synced GitHub org repos, datasets, model cards)
-├── Join Us                     (open positions: undergrad/MSc/PhD/visiting researcher, how to apply)
-├── Contact                     (email, location/map, social, collaboration inquiry form)
-└── 404
+site/                           ← Static site root
+├── index.html                  ← Home (hero + canvas + stats + pillars + featured projects + news)
+├── about.html                  ← About (mission, 4 pillars, reproducibility standard)
+├── research.html               ← Research (4 pillar deep-dives with related project links)
+├── projects.html               ← Projects listing (filterable by status + pillar)
+├── publications.html           ← Publications (filterable by year/type + BibTeX copy)
+├── people.html                 ← People (PI feature card + PhD student grid + open position)
+├── news.html                   ← News listing (3 articles as clickable cards)
+├── contact.html                ← Contact (lab info + Formspree form)
+├── join-us.html                ← Join Us (open positions + guidelines + why CIMILab)
+├── resources.html              ← Reproducibility standard + GitHub repo cards
+├── 404.html                    ← Custom 404 page
+├── projects/
+│   └── dsanet-isles.html       ← DSANet-ISLES detail (problem/approach/results/sidebar)
+│   └── dernet-spinal.html      ← DERNet detail
+│   └── biomed-llm.html         ← BioMed-LLM detail
+│   └── cimilab-bench.html      ← CIMILab-Bench detail (planned project)
+│   └── cimilab-dataops.html    ← CIMILab-DataOps detail
+│   └── cimilab-deploy.html     ← CIMILab-Deploy detail
+├── news/
+│   └── 2026-07-01-biomed-llm-launch.html
+│   └── 2025-06-15-acl-bionlp-acceptance.html
+│   └── 2025-01-10-new-members.html
+└── assets/
+    ├── style.css               ← Full design system + Tailwind config
+    └── js/
+        ├── nav.js              ← Sticky nav + mobile hamburger menu
+        ├── hero-canvas.js      ← Hex-grid + particle canvas animation
+        ├── stats-counter.js    ← Animated counters (IntersectionObserver)
+        ├── filters.js          ← Tab filtering for projects + publications
+        └── bibtex.js           ← BibTeX copy-to-clipboard
 ```
-
-Utility routes: `/rss.xml` (news feed), `/sitemap-index.xml` (SEO), `/robots.txt`.
 
 ---
 
@@ -192,141 +215,51 @@ how_to_apply: markdown
 
 ---
 
-## 6. Full Project Tree
+## 6. Full Project Tree — *As Built*
 
 ```text
-cimilab-website/
-├── .github/
-│   ├── workflows/
-│   │   ├── deploy.yml                 # build + deploy on push to main
-│   │   ├── ci-checks.yml              # lint, typecheck, build, broken-link check, Lighthouse CI
-│   │   └── sync-data.yml              # scheduled: pull GitHub repo stats + OpenAlex citation counts
-│   └── ISSUE_TEMPLATE/
-│       ├── add-publication.md         # guided template so members can request a paper be added
-│       ├── add-news-item.md
-│       └── add-team-member.md
+d:\Languages\CIMILab-Website\
+├── site/                               ← ACTIVE STATIC SITE (HTML / CSS / JS)
+│   ├── index.html                      ← Home page (Hero, Canvas, Stats, Pillars, Projects, News)
+│   ├── about.html                      ← About CIMILab (Mission, 4 Pillars, Reproducibility Standard)
+│   ├── research.html                   ← Research overview (Deep dives into the 4 pillars)
+│   ├── projects.html                   ← Projects listing (Filterable by status and research pillar)
+│   ├── publications.html               ← Publications (Filterable + one-click BibTeX copy)
+│   ├── people.html                     ← People roster (PI, PhD students, RAs, and open positions)
+│   ├── news.html                       ← News & announcements listing
+│   ├── contact.html                    ← Contact page (Lab info + Formspree collaboration form)
+│   ├── join-us.html                    ← Careers / open positions & prospective student guide
+│   ├── resources.html                  ← Open science resources & reproducibility checklist
+│   ├── 404.html                        ← Custom 404 error page
+│   ├── projects/
+│   │   ├── dsanet-isles.html           ← DSANet-ISLES detail page
+│   │   ├── dernet-spinal.html          ← DERNet detail page
+│   │   ├── biomed-llm.html             ← BioMed-LLM detail page
+│   │   ├── cimilab-bench.html          ← CIMILab-Bench detail page (Planned)
+│   │   ├── cimilab-dataops.html        ← CIMILab-DataOps detail page (Planned)
+│   │   └── cimilab-deploy.html         ← CIMILab-Deploy detail page (Planned)
+│   ├── news/
+│   │   ├── 2026-07-01-biomed-llm-launch.html
+│   │   ├── 2025-06-15-acl-bionlp-acceptance.html
+│   │   └── 2025-01-10-new-members.html
+│   └── assets/
+│       ├── style.css                   ← Complete design system, tokens & Tailwind v3 config
+│       └── js/
+│           ├── nav.js                  ← Sticky navigation & responsive mobile hamburger menu
+│           ├── hero-canvas.js          ← Animated hexagonal grid & particle canvas background
+│           ├── stats-counter.js        ← IntersectionObserver animated stat counters
+│           ├── filters.js              ← Tab filtering logic for projects & publications
+│           └── bibtex.js               ← Copy-to-clipboard BibTeX citation helper
 │
-├── public/
-│   ├── favicon.svg
-│   ├── robots.txt
-│   └── files/
-│       └── cv/                        # optional downloadable CVs/one-pagers
+├── content/                            ← Original Markdown & JSON data source files (Reference)
+│   ├── publications/publications.json
+│   ├── team/*.md
+│   ├── projects/*.md
+│   └── news/*.md
 │
-├── src/
-│   ├── assets/
-│   │   └── logo/                      # source vector logo, wordmark, social-card template
-│   │
-│   ├── components/
-│   │   ├── layout/
-│   │   │   ├── Header.astro
-│   │   │   ├── Footer.astro
-│   │   │   ├── NavBar.astro
-│   │   │   └── SeoHead.astro          # meta tags, OpenGraph, JSON-LD structured data
-│   │   ├── home/
-│   │   │   ├── Hero.astro
-│   │   │   ├── ResearchPillars.astro
-│   │   │   ├── FeaturedProjects.astro
-│   │   │   ├── FeaturedPublications.astro
-│   │   │   ├── LatestNews.astro
-│   │   │   └── StatsStrip.astro       # "lab at a glance" counters
-│   │   ├── publications/
-│   │   │   ├── PublicationCard.astro
-│   │   │   ├── PublicationFilters.tsx # React island: filter by tag/year/author
-│   │   │   └── BibtexModal.tsx        # "cite this" copy-to-clipboard
-│   │   ├── people/
-│   │   │   ├── PersonCard.astro
-│   │   │   └── AlumniList.astro
-│   │   ├── projects/
-│   │   │   ├── ProjectCard.astro
-│   │   │   └── StatusBadge.astro      # Active / Planned / Archived
-│   │   ├── news/
-│   │   │   └── NewsCard.astro
-│   │   └── ui/
-│   │       ├── Button.astro
-│   │       ├── Tag.astro
-│   │       ├── ThemeToggle.tsx        # light/dark mode island
-│   │       └── SearchBox.tsx          # Pagefind-powered search island
-│   │
-│   ├── content/
-│   │   ├── config.ts                  # Zod schemas for every collection below
-│   │   ├── people/
-│   │   │   ├── pi-*.md
-│   │   │   ├── phd-*.md
-│   │   │   └── alumni-*.md
-│   │   ├── publications/
-│   │   │   └── papers.bib
-│   │   ├── projects/
-│   │   │   ├── dsanet-isles.md
-│   │   │   ├── dernet-spinal.md
-│   │   │   ├── biomed-llm.md
-│   │   │   ├── cimilab-bench.md
-│   │   │   ├── cimilab-dataops.md
-│   │   │   └── cimilab-deploy.md
-│   │   ├── news/
-│   │   │   └── *.md
-│   │   ├── positions/
-│   │   │   └── *.md
-│   │   └── pages/                     # freeform long-form pages
-│   │       ├── about.md
-│   │       └── reproducibility-standard.md
-│   │
-│   ├── data/
-│   │   ├── site.ts                    # site name, tagline, socials, contact email
-│   │   ├── nav.ts                     # nav + footer link config
-│   │   └── github-repos.generated.json # written by scripts/fetch-github-repos.mjs
-│   │
-│   ├── layouts/
-│   │   ├── BaseLayout.astro
-│   │   ├── PageLayout.astro
-│   │   ├── PersonLayout.astro
-│   │   └── ProjectLayout.astro
-│   │
-│   ├── pages/
-│   │   ├── index.astro
-│   │   ├── about.astro
-│   │   ├── research/
-│   │   │   ├── index.astro
-│   │   │   └── [pillar].astro
-│   │   ├── projects/
-│   │   │   ├── index.astro
-│   │   │   └── [slug].astro
-│   │   ├── publications/
-│   │   │   └── index.astro
-│   │   ├── people/
-│   │   │   ├── index.astro
-│   │   │   └── [slug].astro
-│   │   ├── news/
-│   │   │   ├── index.astro
-│   │   │   └── [slug].astro
-│   │   ├── code-and-software.astro    # auto-synced GitHub org repo listing
-│   │   ├── join-us.astro
-│   │   ├── contact.astro
-│   │   ├── 404.astro
-│   │   └── rss.xml.ts
-│   │
-│   ├── styles/
-│   │   └── global.css                 # Tailwind entry + design tokens
-│   │
-│   └── utils/
-│       ├── bibtex-parser.ts
-│       ├── date.ts
-│       └── seo.ts
-│
-├── scripts/
-│   ├── fetch-github-repos.mjs         # GitHub REST API → src/data/github-repos.generated.json
-│   ├── fetch-citation-counts.mjs      # OpenAlex API, by DOI, → merged into publication cards
-│   └── generate-og-images.mjs         # auto social-share images per page
-│
-├── astro.config.mjs
-├── tailwind.config.mjs
-├── tsconfig.json
-├── package.json
-├── .env.example                       # GITHUB_TOKEN, FORMSPREE_ID, ANALYTICS_ID
-├── .eslintrc.cjs
-├── .prettierrc
-├── CONTRIBUTING.md                    # "how to add a paper/person/news item" for lab members
-├── LICENSE                            # MIT (code) — content usually CC-BY separately
-└── README.md
+├── src/                                ← Deprecated Next.js 16 / React 19 source code (Reference)
+├── CIMILab-Website-Project-Blueprint.md ← This blueprint
+└── README.md                           ← Setup & running instructions
 ```
 
 ---
@@ -397,50 +330,40 @@ The structure above is ready to receive real content. What's still needed from t
 
 ---
 
-## 11. Development Roadmap
+## 11. Development Roadmap & Completed Status
 
-**Phase 0 — Setup (1–2 days)**
-Repo scaffold, Astro + Tailwind install, design tokens, deploy pipeline to a staging URL so the supervisor can watch progress live.
-
-**Phase 1 — MVP content skeleton (1 week)**
-Home, About, Research, People, Projects, News, Contact, Join Us — all wired to the content collections, populated with the real content already available from the GitHub org README, placeholders clearly marked for what's pending from Section 10.
-
-**Phase 2 — Interactivity (3–5 days)**
-Publication filters, Pagefind search, dark mode, BibTeX copy, collaboration form.
-
-**Phase 3 — Automation (2–3 days)**
-GitHub repo sync script, OpenAlex citation sync, auto OG-image generation, RSS feed.
-
-**Phase 4 — Polish & launch (2–3 days)**
-Accessibility pass, Lighthouse performance pass, custom domain + SSL, final content review with supervisor, launch.
-
-**Phase 5 — Maintenance (ongoing)**
-Lab members add news/publications/people via short PRs or issue templates; a standing "content refresh" reminder each semester.
+| Phase | Description | Status |
+|---|---|---|
+| **Phase 0 — Skeleton & Design System** | Create `site/` folder and `site/assets/style.css` with core academic palette, tokens, and Tailwind CDN configuration. | ✅ **Completed** |
+| **Phase 1 — Core JavaScript Modules** | Implement `nav.js` (sticky header, mobile drawer), `hero-canvas.js` (hex-grid particle animation), `stats-counter.js` (IntersectionObserver animated metrics), `filters.js` (tab filtering), and `bibtex.js` (copy-to-clipboard). | ✅ **Completed** |
+| **Phase 2 — Core HTML Pages** | Build `index.html`, `about.html`, `research.html`, `projects.html`, `publications.html`, `people.html`, `news.html`, `contact.html`, `join-us.html`, `resources.html`, and `404.html`. | ✅ **Completed** |
+| **Phase 3 — Detail HTML Pages** | Build individual project pages under `site/projects/*.html` (`dsanet-isles`, `dernet-spinal`, `biomed-llm`, `cimilab-bench`, `cimilab-dataops`, `cimilab-deploy`) and news articles under `site/news/*.html`. | ✅ **Completed** |
+| **Phase 4 — Blueprint & Documentation** | Update Project Blueprint and README to accurately reflect the completed static HTML/CSS/Tailwind architecture. | ✅ **Completed** |
 
 ---
 
 ## 12. Deployment Plan
 
-- **Recommended:** Vercel free tier connected to the `CIMILab` GitHub org repo — automatic preview deployments on every PR, easy custom domain (e.g. `cimilab.org` or a university subdomain), no server to maintain.
-- **Alternative:** GitHub Pages, deployed via the `deploy.yml` Action — keeps everything under `github.com/CIMILab`, zero external accounts needed, slightly less DX polish (no PR previews without extra config).
-- Either way: a real custom domain is worth acquiring — it reads as far more credible than a `github.io` URL on a grant application or a conference poster.
+Because the active website (`site/`) consists purely of static `.html`, `.css`, and `.js` files, deployment requires zero servers, node packages, or build steps:
+
+1. **GitHub Pages:** Push the repository to GitHub and set the GitHub Pages publishing source to the `/site` directory (or copy `site/*` to root/gh-pages branch).
+2. **Netlify or Vercel:** Point the project to the repository and set the **Publish directory / Output directory** to `site`. Leave the build command empty.
+3. **Traditional Web Server:** Simply upload the contents of the `site/` folder to any Apache, Nginx, or university web server directory via FTP/SSH.
 
 ---
 
-## 13. Content Workflow (for non-webmaster lab members)
+## 13. Content Workflow (For Lab Members)
 
-1. **Adding a publication:** append one entry to `src/content/publications/papers.bib` (any reference manager can export this) → open a PR → merges → live.
-2. **Adding a news item:** copy an existing file in `src/content/news/`, fill in the front-matter, write 2–3 sentences → PR → live.
-3. **Adding/updating a person:** same pattern in `src/content/people/`.
-4. **Non-coders:** use the GitHub web editor directly (no local setup needed) to edit any Markdown file, or file one of the pre-built Issue Templates and let the webmaster merge it. Phase-2 option: add Decap CMS for a full form-based editing UI over the same files.
+To update content on the static site:
+
+1. **Adding/Editing People:** Open `site/people.html` and duplicate an existing person card (`<div class="card...">...</div>`), changing the name, role, photo, and bio.
+2. **Adding a Publication:** Open `site/publications.html` and duplicate a `<div class="pub-card..." data-year="..." data-pillar="...">...</div>` block. Update the title, authors, venue, and `<pre class="bibtex-data">` block.
+3. **Adding a Project:** Open `site/projects.html` to add the listing card, and create a new `site/projects/your-project.html` file by copying one of the existing project detail pages (like `dsanet-isles.html`).
+4. **Adding a News Item:** Add a card to `site/news.html` and create a corresponding article page inside `site/news/`.
 
 ---
 
-## 14. Next Steps
+## 14. Summary of Migration
 
-This document is the blueprint — nothing has been built yet. Good next actions, in order:
-
-1. Confirm the tech stack choice (Astro is the recommendation above; say the word if you'd rather use Next.js).
-2. Send over what you already have from Section 10 (member list, publication export, PI bio) — even partial is fine, placeholders can fill the rest.
-3. I can scaffold the actual Phase 0/1 codebase next — real files, real folder structure, a working homepage you can preview.
+The migration from the Next.js 16 / React prototype to a zero-dependency static HTML/CSS/Tailwind site is fully executed and tested. All UI animations, design tokens, interactive tabs, responsive layouts, and content items have been preserved while eliminating build complexity, server dependencies, and framework overhead. The site is immediately ready for local development (`python -m http.server 3000 --directory site`) and production hosting.
 

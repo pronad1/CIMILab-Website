@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | CIMILab</title>
+  <meta name="description" content="Get in touch with CIMILab for collaboration, media inquiries, or general questions." />
+  <link rel="icon" href="./images/cimilab_icon.png" type="image/png" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { corePlugins: { preflight: false } }</script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header id="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"><img src="./images/cimilab_icon.png" alt="CIMILab" /></div>
+        <div><div class="brand-name">CIMI<span>Lab</span></div><div class="brand-sub">Univ. of Missouri · MUIDSI</div></div>
+      </a>
+      <div class="desktop-nav">
+        <a href="about.html"        class="nav-link">About</a>
+        <a href="research.html"     class="nav-link">Research</a>
+        <a href="projects.html"     class="nav-link">Projects</a>
+        <a href="publications.html" class="nav-link">Publications</a>
+        <a href="people.html"       class="nav-link">People</a>
+        <a href="news.html"         class="nav-link">News</a>
+        <a href="resources.html"    class="nav-link">Resources</a>
+        <a href="join-us.html"      class="btn btn-primary btn-sm" style="margin-left:0.75rem;">Join Us</a>
+      </div>
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+        <svg class="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </nav>
+  </div>
+  <nav id="mobile-menu">
+    <a href="index.html"        class="mobile-nav-link">Home</a>
+    <a href="about.html"        class="mobile-nav-link">About</a>
+    <a href="research.html"     class="mobile-nav-link">Research</a>
+    <a href="projects.html"     class="mobile-nav-link">Projects</a>
+    <a href="publications.html" class="mobile-nav-link">Publications</a>
+    <a href="people.html"       class="mobile-nav-link">People</a>
+    <a href="news.html"         class="mobile-nav-link">News</a>
+    <a href="resources.html"    class="mobile-nav-link">Resources</a>
+    <a href="join-us.html"      class="mobile-nav-link">Join Us</a>
+    <a href="contact.html"      class="mobile-nav-link active">Contact <span class="mobile-nav-dot"></span></a>
+  </nav>
+</header>
+
+<div class="page-top">
+
+  <!-- HEADER -->
+  <section class="section" style="padding-bottom:2rem;">
+    <div class="container" style="max-width:900px;">
+      <p style="color:var(--accent);font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;">Get in touch</p>
+      <h1 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-0.04em;margin-bottom:1.5rem;">Contact <span class="gradient-text">Us</span></h1>
+      <p style="color:var(--text-secondary);font-size:1.1rem;line-height:1.75;max-width:60ch;">
+        Whether you're looking to collaborate on research, inquire about our open-source tools, or join the lab, we'd love to hear from you.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="section" style="padding-top:2rem;">
+    <div class="container" style="max-width:900px;">
+      <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;" class="contact-grid">
+
+        <!-- Info -->
+        <div style="display:flex;flex-direction:column;gap:2rem;">
+          <div>
+            <h2 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem;">Lab Information</h2>
+            <div style="display:flex;flex-direction:column;gap:1rem;">
+              <!-- Email -->
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <div style="width:2.5rem;height:2.5rem;border-radius:8px;background:rgba(245,158,11,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <span style="display:block;font-weight:600;font-size:0.95rem;margin-bottom:0.25rem;">Email</span>
+                  <a href="mailto:deycimilab@gmail.com" style="color:var(--text-secondary);">deycimilab@gmail.com</a>
+                </div>
+              </div>
+              <!-- Location -->
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <div style="width:2.5rem;height:2.5rem;border-radius:8px;background:rgba(59,130,246,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="18" height="18" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <span style="display:block;font-weight:600;font-size:0.95rem;margin-bottom:0.25rem;">Location</span>
+                  <span style="color:var(--text-secondary);">MU Institute for Data Science and Informatics<br/>University of Missouri<br/>Columbia, Missouri, USA</span>
+                </div>
+              </div>
+              <!-- GitHub -->
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <div style="width:2.5rem;height:2.5rem;border-radius:8px;background:rgba(139,92,246,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="18" height="18" fill="currentColor" stroke="none" viewBox="0 0 24 24" style="color:#8B5CF6;"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.7.115 2.5.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+                </div>
+                <div>
+                  <span style="display:block;font-weight:600;font-size:0.95rem;margin-bottom:0.25rem;">GitHub Organization</span>
+                  <a href="https://github.com/CIMILab" target="_blank" rel="noopener noreferrer" style="color:var(--text-secondary);">github.com/CIMILab</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding:1.5rem;background:var(--bg-secondary);">
+            <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.5rem;">Prospective Students</h3>
+            <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.6;">
+              If you are inquiring about a position, please refer to the <a href="join-us.html" style="color:var(--accent);font-weight:600;text-decoration:underline;">Join Us page</a> first to review our application guidelines and required materials.
+            </p>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="card" style="padding:2rem;">
+          <h2 style="font-size:1.25rem;font-weight:700;margin-bottom:1.5rem;">Send a Message</h2>
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display:flex;flex-direction:column;gap:1.25rem;">
+            <div>
+              <label for="contact-name" class="form-label">Name</label>
+              <input type="text" id="contact-name" name="name" required class="form-input" placeholder="Your full name" />
+            </div>
+            <div>
+              <label for="contact-email" class="form-label">Email Address</label>
+              <input type="email" id="contact-email" name="email" required class="form-input" placeholder="your@email.com" />
+            </div>
+            <div>
+              <label for="contact-topic" class="form-label">Topic</label>
+              <select id="contact-topic" name="topic" class="form-select">
+                <option value="Collaboration">Collaboration / Partnership</option>
+                <option value="Software">Software / Dataset Inquiry</option>
+                <option value="Admissions">Admissions / Joining the Lab</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="contact-message" class="form-label">Message</label>
+              <textarea id="contact-message" name="message" rows="5" required class="form-textarea" placeholder="Write your message here..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="justify-content:center;margin-top:0.5rem;">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer style="background:var(--bg-void);border-top:1px solid var(--border);">
+  <div class="container" style="padding:2.5rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+    <p style="color:var(--text-faint);font-size:0.78rem;">© 2026 CIMILab · University of Missouri</p>
+    <div style="display:flex;gap:1.25rem;">
+      <a href="index.html"   class="footer-text-link">Home</a>
+      <a href="join-us.html" class="footer-text-link">Join Us</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

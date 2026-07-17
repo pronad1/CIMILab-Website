@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | CIMILab</title>
+  <meta name="description" content="CIMILab flagship research projects and code repositories." />
+  <link rel="icon" href="./images/cimilab_icon.png" type="image/png" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { corePlugins: { preflight: false } }</script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header id="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"><img src="./images/cimilab_icon.png" alt="CIMILab" /></div>
+        <div><div class="brand-name">CIMI<span>Lab</span></div><div class="brand-sub">Univ. of Missouri · MUIDSI</div></div>
+      </a>
+      <div class="desktop-nav">
+        <a href="about.html"        class="nav-link">About</a>
+        <a href="research.html"     class="nav-link">Research</a>
+        <a href="projects.html"     class="nav-link active">Projects</a>
+        <a href="publications.html" class="nav-link">Publications</a>
+        <a href="people.html"       class="nav-link">People</a>
+        <a href="news.html"         class="nav-link">News</a>
+        <a href="resources.html"    class="nav-link">Resources</a>
+        <a href="join-us.html"      class="btn btn-primary btn-sm" style="margin-left:0.75rem;">Join Us</a>
+      </div>
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+        <svg class="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </nav>
+  </div>
+  <nav id="mobile-menu">
+    <a href="index.html"        class="mobile-nav-link">Home</a>
+    <a href="about.html"        class="mobile-nav-link">About</a>
+    <a href="research.html"     class="mobile-nav-link">Research</a>
+    <a href="projects.html"     class="mobile-nav-link active">Projects <span class="mobile-nav-dot"></span></a>
+    <a href="publications.html" class="mobile-nav-link">Publications</a>
+    <a href="people.html"       class="mobile-nav-link">People</a>
+    <a href="news.html"         class="mobile-nav-link">News</a>
+    <a href="resources.html"    class="mobile-nav-link">Resources</a>
+    <a href="join-us.html"      class="mobile-nav-link">Join Us</a>
+    <a href="contact.html"      class="mobile-nav-link">Contact</a>
+  </nav>
+</header>
+
+<div class="page-top">
+
+  <!-- HEADER -->
+  <section class="section" style="padding-bottom:2rem;">
+    <div class="container" style="max-width:900px;text-align:center;">
+      <p style="color:var(--accent);font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;">Research Output</p>
+      <h1 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-0.04em;margin-bottom:1.5rem;">Flagship <span class="gradient-text">Projects</span></h1>
+      <p style="color:var(--text-secondary);font-size:1.1rem;line-height:1.75;max-width:60ch;margin:0 auto;">
+        Open science starts with open code. Every major paper from CIMILab is accompanied by a maintained repository, documented codebase, and public dataset.
+      </p>
+    </div>
+  </section>
+
+  <!-- FILTER TABS -->
+  <section class="section" style="padding-top:1rem;padding-bottom:2rem;">
+    <div class="container">
+      <div class="filter-tabs" data-filter-group>
+        <button class="filter-tab active" data-filter-tab="all">All Projects</button>
+        <button class="filter-tab" data-filter-tab="active">Active</button>
+        <button class="filter-tab" data-filter-tab="planned">Planned</button>
+        <button class="filter-tab" data-filter-tab="machine-intelligence">Machine Intelligence</button>
+        <button class="filter-tab" data-filter-tab="computational-informatics">Computational Informatics</button>
+        <button class="filter-tab" data-filter-tab="translational-ai">Translational AI</button>
+      </div>
+
+      <div class="proj-grid">
+
+        <!-- DSANet-ISLES -->
+        <div class="card-accent" data-filter-item data-filter-tags="active,machine-intelligence" style="padding:1.75rem;display:flex;flex-direction:column;--p-color:#F59E0B;--p-dim:rgba(245,158,11,0.12);--p-border:rgba(245,158,11,0.25);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.125rem;">
+            <span style="font-size:0.68rem;font-weight:700;padding:0.2rem 0.65rem;border-radius:999px;text-transform:uppercase;background:rgba(16,185,129,0.12);color:#34D399;">● Active</span>
+            <span style="font-size:0.68rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:4px;background:rgba(245,158,11,0.14);color:#F59E0B;">machine intelligence</span>
+          </div>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:0.625rem;letter-spacing:-0.02em;">DSANet-ISLES</h3>
+          <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.7;flex:1;margin-bottom:1.125rem;">Interpretable multi-architecture ensemble for ischemic stroke lesion segmentation on the ISLES benchmark.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:1.25rem;">
+            <span style="font-size:0.68rem;padding:0.15rem 0.55rem;border-radius:4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:var(--text-muted);">medical ai</span>
+            <span style="font-size:0.68rem;padding:0.15rem 0.55rem;border-radius:4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:var(--text-muted);">segmentation</span>
+          </div>
+          <div style="display:flex;gap:0.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+            <a href="projects/dsanet-isles.html" class="btn btn-ghost btn-sm" style="flex:1;justify-content:center;">Details →</a>
+            <a href="https://github.com/CIMILab/StrokeDSANet_ISLES22" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" aria-label="GitHub">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.7.115 2.5.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- DERNet -->
+        <div class="card-accent" data-filter-item data-filter-tags="active,computational-informatics" style="padding:1.75rem;display:flex;flex-direction:column;--p-color:#3B82F6;--p-dim:rgba(59,130,246,0.12);--p-border:rgba(59,130,246,0.25);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.125rem;">
+            <span style="font-size:0.68rem;font-weight:700;padding:0.2rem 0.65rem;border-radius:999px;text-transform:uppercase;background:rgba(16,185,129,0.12);color:#34D399;">● Active</span>
+            <span style="font-size:0.68rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:4px;background:rgba(59,130,246,0.14);color:#3B82F6;">computational informatics</span>
+          </div>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:0.625rem;letter-spacing:-0.02em;">DERNet — Spinal AI</h3>
+          <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.7;flex:1;margin-bottom:1.125rem;">Dual encoder representation network for spinal lesion detection and classification on VinDr-SpineXR.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:1.25rem;">
+            <span style="font-size:0.68rem;padding:0.15rem 0.55rem;border-radius:4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:var(--text-muted);">medical ai</span>
+            <span style="font-size:0.68rem;padding:0.15rem 0.55rem;border-radius:4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:var(--text-muted);">radiology</span>
+          </div>
+          <div style="display:flex;gap:0.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+            <a href="projects/dernet-spinal.html" class="btn btn-ghost btn-sm" style="flex:1;justify-content:center;">Details →</a>
+            <a href="https://github.com/CIMILab/Spinal_Lesion-VinDr-SpineXR" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" aria-label="GitHub">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.7.115 2.5.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- BioMed-LLM -->
+        <div class="card-accent" data-filter-item data-filter-tags="active,translational-ai" style="padding:1.75rem;display:flex;flex-direction:column;--p-color:#10B981;--p-dim:rgba(16,185,129,0.12);--p-border:rgba(16,185,129,0.25);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.125rem;">
+            <span style="font-size:0.68rem;font-weight:700;padding:0.2rem 0.65rem;border-radius:999px;text-transform:uppercase;background:rgba(16,185,129,0.12);color:#34D399;">● Active</span>
+            <span style="font-size:0.68rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:4px;background:rgba(16,185,129,0.14);color:#10B981;">translational ai</span>
+          </div>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:0.625rem;letter-spacing:-0.02em;">BioMed-LLM</h3>
+          <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.7;flex:1;margin-bottom:1.125rem;">Biomedical foundation model fine-tuning and evaluation suite for clinical NLP tasks.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:1.25rem;">
+            <span style="font-size:0.68rem;padding:0.15rem 0.55rem;border-radius:4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:var(--text-muted);">foundation models</span>
+            <span style="font-size:0.68rem;padding:0.15rem 0.55rem;border-radius:4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:var(--text-muted);">clinical nlp</span>
+          </div>
+          <div style="display:flex;gap:0.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+            <a href="projects/biomed-llm.html" class="btn btn-ghost btn-sm" style="flex:1;justify-content:center;">Details →</a>
+            <a href="https://github.com/CIMILab/BioMed-LLM" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" aria-label="GitHub">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.7.115 2.5.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- CIMILab-Bench -->
+        <div class="card-accent" data-filter-item data-filter-tags="planned,computational-informatics" style="padding:1.75rem;display:flex;flex-direction:column;--p-color:#3B82F6;--p-dim:rgba(59,130,246,0.12);--p-border:rgba(59,130,246,0.25);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.125rem;">
+            <span style="font-size:0.68rem;font-weight:700;padding:0.2rem 0.65rem;border-radius:999px;text-transform:uppercase;background:rgba(245,158,11,0.12);color:#FBBF24;">● Planned</span>
+            <span style="font-size:0.68rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:4px;background:rgba(59,130,246,0.14);color:#3B82F6;">computational informatics</span>
+          </div>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:0.625rem;letter-spacing:-0.02em;">CIMILab-Bench</h3>
+          <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.7;flex:1;margin-bottom:1.125rem;">A unified benchmarking suite for medical AI evaluation — standardized metrics, leaderboards, and reproducibility tooling.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:1.25rem;">
+            <span style="font-size:0.68rem;padding:0.15rem 0.55rem;border-radius:4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:var(--text-muted);">benchmarking</span>
+            <span style="font-size:0.68rem;padding:0.15rem 0.55rem;border-radius:4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:var(--text-muted);">evaluation</span>
+          </div>
+          <div style="display:flex;gap:0.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+            <a href="projects/cimilab-bench.html" class="btn btn-ghost btn-sm" style="flex:1;justify-content:center;">Details →</a>
+          </div>
+        </div>
+
+        <!-- CIMILab-DataOps -->
+        <div class="card-accent" data-filter-item data-filter-tags="planned,computational-informatics" style="padding:1.75rem;display:flex;flex-direction:column;--p-color:#3B82F6;--p-dim:rgba(59,130,246,0.12);--p-border:rgba(59,130,246,0.25);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.125rem;">
+            <span style="font-size:0.68rem;font-weight:700;padding:0.2rem 0.65rem;border-radius:999px;text-transform:uppercase;background:rgba(245,158,11,0.12);color:#FBBF24;">● Planned</span>
+            <span style="font-size:0.68rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:4px;background:rgba(59,130,246,0.14);color:#3B82F6;">computational informatics</span>
+          </div>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:0.625rem;letter-spacing:-0.02em;">CIMILab-DataOps</h3>
+          <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.7;flex:1;margin-bottom:1.125rem;">Automated data versioning, preprocessing, and pipeline management for medical imaging research.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:1.25rem;">
+            <span style="font-size:0.68rem;padding:0.15rem 0.55rem;border-radius:4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:var(--text-muted);">data engineering</span>
+          </div>
+          <div style="display:flex;gap:0.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+            <a href="projects/cimilab-dataops.html" class="btn btn-ghost btn-sm" style="flex:1;justify-content:center;">Details →</a>
+          </div>
+        </div>
+
+        <!-- CIMILab-Deploy -->
+        <div class="card-accent" data-filter-item data-filter-tags="planned,translational-ai" style="padding:1.75rem;display:flex;flex-direction:column;--p-color:#10B981;--p-dim:rgba(16,185,129,0.12);--p-border:rgba(16,185,129,0.25);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.125rem;">
+            <span style="font-size:0.68rem;font-weight:700;padding:0.2rem 0.65rem;border-radius:999px;text-transform:uppercase;background:rgba(245,158,11,0.12);color:#FBBF24;">● Planned</span>
+            <span style="font-size:0.68rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:4px;background:rgba(16,185,129,0.14);color:#10B981;">translational ai</span>
+          </div>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:0.625rem;letter-spacing:-0.02em;">CIMILab-Deploy</h3>
+          <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.7;flex:1;margin-bottom:1.125rem;">Inference server and model card toolkit for deploying CIMILab models in clinical and edge environments.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:1.25rem;">
+            <span style="font-size:0.68rem;padding:0.15rem 0.55rem;border-radius:4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:var(--text-muted);">edge ai</span>
+            <span style="font-size:0.68rem;padding:0.15rem 0.55rem;border-radius:4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:var(--text-muted);">deployment</span>
+          </div>
+          <div style="display:flex;gap:0.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+            <a href="projects/cimilab-deploy.html" class="btn btn-ghost btn-sm" style="flex:1;justify-content:center;">Details →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer style="background:var(--bg-void);border-top:1px solid var(--border);">
+  <div class="container" style="padding:2.5rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+    <p style="color:var(--text-faint);font-size:0.78rem;">© 2026 CIMILab · University of Missouri</p>
+    <div style="display:flex;gap:1.25rem;">
+      <a href="index.html"    class="footer-text-link">Home</a>
+      <a href="research.html" class="footer-text-link">Research</a>
+      <a href="contact.html"  class="footer-text-link">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/filters.js"></script>
+</body>
+</html>

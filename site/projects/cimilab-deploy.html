@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CIMILab-Deploy | CIMILab Projects</title>
+  <meta name="description" content="Production deployment toolkit for CIMILab's medical AI models — serving, monitoring, and edge optimization." />
+  <link rel="icon" href="../images/cimilab_icon.png" type="image/png" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { corePlugins: { preflight: false } }</script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header id="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-icon"><img src="../images/cimilab_icon.png" alt="CIMILab" /></div>
+        <div><div class="brand-name">CIMI<span>Lab</span></div><div class="brand-sub">Univ. of Missouri · MUIDSI</div></div>
+      </a>
+      <div class="desktop-nav">
+        <a href="../about.html"        class="nav-link">About</a>
+        <a href="../research.html"     class="nav-link">Research</a>
+        <a href="../projects.html"     class="nav-link active">Projects</a>
+        <a href="../publications.html" class="nav-link">Publications</a>
+        <a href="../people.html"       class="nav-link">People</a>
+        <a href="../news.html"         class="nav-link">News</a>
+        <a href="../resources.html"    class="nav-link">Resources</a>
+        <a href="../join-us.html"      class="btn btn-primary btn-sm" style="margin-left:0.75rem;">Join Us</a>
+      </div>
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+        <svg class="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </nav>
+  </div>
+  <nav id="mobile-menu">
+    <a href="../index.html"    class="mobile-nav-link">Home</a>
+    <a href="../about.html"    class="mobile-nav-link">About</a>
+    <a href="../research.html" class="mobile-nav-link">Research</a>
+    <a href="../projects.html" class="mobile-nav-link active">Projects <span class="mobile-nav-dot"></span></a>
+    <a href="../people.html"   class="mobile-nav-link">People</a>
+    <a href="../join-us.html"  class="mobile-nav-link">Join Us</a>
+    <a href="../contact.html"  class="mobile-nav-link">Contact</a>
+  </nav>
+</header>
+
+<div class="page-top">
+
+  <!-- HEADER -->
+  <section class="section" style="padding-bottom:2rem;">
+    <div class="container" style="max-width:900px;">
+      <a href="../projects.html" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:var(--text-muted);text-decoration:none;margin-bottom:1.5rem;">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        All Projects
+      </a>
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;flex-wrap:wrap;">
+        <span style="font-size:0.68rem;font-weight:700;padding:0.2rem 0.65rem;border-radius:999px;text-transform:uppercase;background:rgba(245,158,11,0.12);color:#FBBF24;">● Planned</span>
+        <span style="font-size:0.68rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:4px;background:rgba(16,185,129,0.14);color:#10B981;">Translational AI</span>
+      </div>
+      <h1 style="font-size:clamp(1.75rem,4vw,3rem);font-weight:800;letter-spacing:-0.04em;margin-bottom:1rem;">CIMILab-Deploy</h1>
+      <p style="color:var(--text-secondary);font-size:1.1rem;line-height:1.75;margin-bottom:2rem;">
+        Production deployment toolkit for CIMILab's medical AI models — serving, monitoring, and edge optimization.
+      </p>
+      <div style="display:flex;gap:0.625rem;flex-wrap:wrap;">
+        <a href="https://github.com/CIMILab/CIMILab-Deploy" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.7.115 2.5.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+          View Repository
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="section" style="padding-top:0;">
+    <div class="container" style="max-width:900px;">
+      <div style="display:grid;grid-template-columns:1fr 280px;gap:3rem;align-items:start;" class="proj-detail-grid">
+
+        <!-- Main content -->
+        <div class="prose" style="max-width:none;">
+          <h2>Problem</h2>
+          <p>Translating a well-performing research model into a reliable clinical tool requires engineering that goes far beyond model training: efficient inference, serving infrastructure, monitoring for distribution shift, and optimization for low-resource settings. CIMILab-Deploy bridges this gap.</p>
+
+          <h2>Approach</h2>
+          <p>CIMILab-Deploy will provide deployment-ready wrappers and tooling for CIMILab's trained models:</p>
+          <ul>
+            <li><strong>Optimized inference:</strong> ONNX export, TensorRT optimization, quantization pipelines (INT8/FP16)</li>
+            <li><strong>Serving infrastructure:</strong> FastAPI-based REST endpoints with async batch inference</li>
+            <li><strong>Uncertainty-aware outputs:</strong> Every deployed model exposes confidence estimates alongside predictions</li>
+            <li><strong>Edge adaptation:</strong> Lightweight model variants for deployment on resource-constrained hardware in low-resource clinical settings</li>
+            <li><strong>Monitoring hooks:</strong> Data drift detection, performance degradation alerts</li>
+          </ul>
+
+          <h2>Status</h2>
+          <p>CIMILab-Deploy will initially wrap the DSANet-ISLES segmentation model. The existing <code>deploy_DSANet_ISLES22</code> repository provides the foundation; this project generalizes it into a reusable framework.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <div style="display:flex;flex-direction:column;gap:1.5rem;position:sticky;top:5.5rem;">
+          <div class="card" style="padding:1.5rem;">
+            <h3 style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:1rem;">Project Info</h3>
+            <dl style="display:flex;flex-direction:column;gap:0.875rem;font-size:0.875rem;">
+              <div>
+                <dt style="color:var(--text-muted);font-size:0.72rem;margin-bottom:0.2rem;text-transform:uppercase;letter-spacing:0.05em;">Status</dt>
+                <dd style="color:#FBBF24;font-weight:600;">Planned</dd>
+              </div>
+              <div>
+                <dt style="color:var(--text-muted);font-size:0.72rem;margin-bottom:0.2rem;text-transform:uppercase;letter-spacing:0.05em;">Pillar</dt>
+                <dd style="color:var(--text-primary);">Translational AI</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="card" style="padding:1.5rem;">
+            <h3 style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:1rem;">Tags</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+              <span class="tag">edge-ai</span>
+              <span class="tag">deployment</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<style>
+  @media (max-width: 768px) {
+    .proj-detail-grid { grid-template-columns: 1fr !important; }
+  }
+</style>
+
+<!-- FOOTER -->
+<footer style="background:var(--bg-void);border-top:1px solid var(--border);">
+  <div class="container" style="padding:2.5rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+    <p style="color:var(--text-faint);font-size:0.78rem;">© 2026 CIMILab · University of Missouri</p>
+    <div style="display:flex;gap:1.25rem;">
+      <a href="../index.html"    class="footer-text-link">Home</a>
+      <a href="../projects.html" class="footer-text-link">Projects</a>
+      <a href="../contact.html"  class="footer-text-link">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/nav.js"></script>
+</body>
+</html>
